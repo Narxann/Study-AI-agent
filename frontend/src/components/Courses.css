@@ -1,0 +1,391 @@
+
+.courses-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding-bottom: 40px;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 28px;
+}
+
+.page-header h1 {
+  margin: 0;
+  font-size: 30px;
+}
+
+.page-header p {
+  margin: 7px 0 0;
+  color: var(--muted);
+}
+
+.primary-button,
+.secondary-button,
+.back-button {
+  border: none;
+  border-radius: 12px;
+  padding: 11px 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.primary-button {
+  background: var(--primary);
+  color: white;
+}
+
+.secondary-button {
+  background: var(--soft);
+  color: var(--text);
+}
+
+.back-button {
+  background: transparent;
+  color: var(--muted);
+  padding: 8px 0;
+  margin-bottom: 24px;
+}
+
+.course-form {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 24px;
+  margin-bottom: 28px;
+}
+
+.course-form h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px;
+  font: inherit;
+  outline: none;
+  background: white;
+  box-sizing: border-box;
+}
+
+.form-group textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--primary);
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.course-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 20px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.course-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--primary);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.course-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.course-icon,
+.course-detail-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  background: var(--soft);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.delete-course {
+  border: none;
+  background: transparent;
+  color: #aaa;
+  cursor: pointer;
+  padding: 7px;
+  border-radius: 8px;
+}
+
+.delete-course:hover {
+  background: #fff0f0;
+  color: #d95353;
+}
+
+.course-card h2 {
+  margin: 18px 0 5px;
+  font-size: 19px;
+}
+
+.course-card p {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.5;
+  min-height: 42px;
+}
+
+.course-code {
+  font-size: 13px;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.course-card-footer {
+  border-top: 1px solid var(--border);
+  margin-top: 18px;
+  padding-top: 14px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.empty-courses,
+.empty-assignments {
+  background: var(--card);
+  border: 1px dashed var(--border);
+  border-radius: 20px;
+  padding: 60px 20px;
+  text-align: center;
+  color: var(--muted);
+}
+
+.empty-courses svg,
+.empty-assignments svg {
+  color: var(--primary);
+  margin-bottom: 10px;
+}
+
+.empty-courses h2,
+.empty-assignments h3 {
+  color: var(--text);
+  margin: 8px 0;
+}
+
+.course-detail-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.course-detail-header h1 {
+  margin: 0;
+  font-size: 30px;
+}
+
+.course-detail-header p {
+  margin: 5px 0 0;
+  color: var(--muted);
+}
+
+.course-description {
+  background: var(--soft);
+  border-radius: 14px;
+  padding: 14px 16px;
+  margin-bottom: 30px;
+  color: var(--text);
+}
+
+.assignment-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.assignment-section-header h2 {
+  margin: 0;
+}
+
+.assignment-section-header p {
+  color: var(--muted);
+  margin: 5px 0 0;
+}
+
+@media (max-width: 900px) {
+  .course-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .page-header,
+  .assignment-section-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .course-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .page-header .primary-button,
+  .assignment-section-header .primary-button {
+    justify-content: center;
+  }
+}
+
+
+.assignment-form {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 22px;
+  margin-bottom: 22px;
+}
+
+.assignment-form h3 {
+  margin: 0 0 20px;
+}
+
+.assignment-date-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.assignment-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.assignment-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 16px;
+  transition: 0.2s ease;
+}
+
+.assignment-card:hover {
+  border-color: var(--primary);
+}
+
+.assignment-check {
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+  border: 2px solid var(--border);
+  border-radius: 50%;
+  background: transparent;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.assignment-check:hover {
+  border-color: var(--primary);
+  background: var(--soft);
+}
+
+.assignment-completed .assignment-check {
+  background: var(--primary);
+  border-color: var(--primary);
+}
+
+.assignment-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.assignment-content h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.assignment-content p {
+  margin: 5px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.assignment-due {
+  margin-top: 8px;
+  color: var(--primary);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.assignment-completed .assignment-content h3 {
+  text-decoration: line-through;
+  color: var(--muted);
+}
+
+.delete-assignment {
+  border: none;
+  background: transparent;
+  color: #aaa;
+  padding: 7px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.delete-assignment:hover {
+  color: #d95353;
+  background: #fff0f0;
+}
+
+@media (max-width: 600px) {
+  .assignment-date-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
+
+
