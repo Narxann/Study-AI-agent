@@ -1,95 +1,63 @@
 # Study AI Agent
 
-An AI-powered study assistant designed to help students organize their learning and manage academic tasks through an interactive chat interface.
+An experimental AI-powered study assistant for university students, combining a conversational interface with academic productivity tools.
+
+> **Status:** Personal learning project / prototype. Features listed below are implemented in repository code; end-to-end reliability and deployment have not been independently verified.
 
 ## Overview
 
-Study AI Agent is a personal project exploring how AI agents can support students in their daily academic activities. It combines a language model with backend tools to handle user requests and support task management.
+The project explores how a large language model can interact with application tools and persistent academic data. The backend uses FastAPI and the Google Gemini API; the repository also includes a React/Vite frontend.
 
-The project focuses on integrating AI capabilities with practical application features.
+## Features in the codebase
 
-## Features
+- Conversational AI endpoint with conversation history and tool configuration.
+- Task creation, editing, completion, deletion and calendar-oriented task listing.
+- Notes, study sessions, course and assignment management.
+- Quiz generation and quiz-result records, study-plan and flashcard generation.
+- Study progress and course-resource endpoints.
 
-- **AI-powered chat:** Interact with an AI assistant through a conversational interface.
-- **Task management:** Use integrated tools to support academic task management.
-- **Backend API:** Handle application requests through a FastAPI backend.
-- **LLM integration:** Connect a language model using the Google Gemini API.
-- **Frontend interface:** Provide a user interface for interacting with the assistant.
+Some functions depend on database configuration and external API access. The presence of an endpoint does not guarantee that every flow has been tested successfully.
 
-## Tech Stack
+## Technology
 
-- **Language:** Python, JavaScript
-- **Backend:** FastAPI
-- **AI / LLM:** Google Gemini API
-- **Frontend:** JavaScript-based web application
-- **Tools:** Git, GitHub
+- **Backend:** Python, FastAPI, Pydantic
+- **LLM:** Google Gemini API / Google GenAI SDK
+- **Frontend:** React, JavaScript, Vite
+- **Data:** Database access through `app/database.py`
+- **Development:** Git, GitHub, Python test scripts
 
-## Project Structure
+## Repository layout
 
 ```text
-Study-AI-agent/
-├── app/                 # Backend application
-├── frontend/            # Frontend application
-├── .gitignore
-├── App.css
-├── package.json
-├── test_modules.py
-├── test_tasks.py
-└── README.md
+app/                FastAPI application, database access and tools
+frontend/           React/Vite frontend
+test_modules.py     Test script
+test_tasks.py       Test script
+README.md           Project documentation
 ```
 
-## Getting Started
+## Local setup (development)
 
-### Prerequisites
+1. Clone this repository and create a Python virtual environment.
+2. Install the backend dependencies used by `app/main.py` and the tools modules.
+3. Configure a local `.env` with `GEMINI_API_KEY` and the database settings required by `app/database.py`. Never commit secrets.
+4. Ensure the database and required tables are available. The application mounts an `uploads/` directory, so create it if needed.
+5. Start the backend from the repository root with `uvicorn app.main:app --reload`.
+6. Install frontend dependencies in `frontend/` using `npm install`, then start it with `npm run dev`.
 
-- Python
-- Node.js and npm
-- A Google Gemini API key
+**Note:** Backend dependencies and database initialization may need additional setup. These instructions are a development starting point, not a verified one-command installation.
 
-### Setup
+## AI-assisted development and learning
 
-1. Clone the repository:
+This project is developed with AI coding assistance. My focus is understanding the architecture, how the frontend communicates with FastAPI, how LLM tool calls connect to application operations, and how to diagnose and test integration issues. I do not claim to have independently authored every line of code.
 
-   ```bash
-   git clone https://github.com/Narxann/Study-AI-agent.git
-   cd Study-AI-agent
-   ```
+## Next steps
 
-2. Create and activate a Python virtual environment:
-
-   ```bash
-   python3 -m venv venv
-   source venv/bin/activate
-   ```
-
-3. Install the required Python packages according to the project's dependency configuration.
-4. Configure your Gemini API key using an environment variable in a local `.env` file. Never commit API keys or other secrets to GitHub.
-5. Install the frontend dependencies using npm in the directory containing the frontend's `package.json`.
-6. Start the backend and frontend using their respective development commands.
-
-_Note: Exact installation and startup commands depend on the project's current dependency files and application entry points._
-
-## What I Learned
-
-Through this project, I have been exploring:
-
-- Integrating a large language model into an application
-- Building backend APIs with FastAPI
-- Connecting AI capabilities with application tools
-- Organizing a project into backend and frontend components
-- Testing application functionality and debugging integration issues
-
-## Future Improvements
-
-- Improve the assistant's reliability and error handling
-- Expand academic task management capabilities
-- Add learning resource management features
-- Improve automated testing and documentation
+- Document database setup and pin backend dependencies.
+- Add repeatable end-to-end tests and clearer error handling.
+- Verify each feature with reproducible test cases.
+- Add screenshots and a short demonstration after validation.
 
 ## Author
 
-**Narxann**
-
-Computer Science student interested in software engineering, artificial intelligence, and machine learning.
-
-- GitHub: [@Narxann](https://github.com/Narxann)
+[Narxann](https://github.com/Narxann)
